@@ -12,7 +12,7 @@ export default function Home() {
     <div className="main">
       <Surface/>
       {
-        [...dummyArr].map((d,i)=><Canvas top={vh*++i}/>)
+        [...dummyArr].map((d,i)=><Canvas key={i} top={vh*++i}/>)  
       }
       <Meter/>
       <div className="grid">
