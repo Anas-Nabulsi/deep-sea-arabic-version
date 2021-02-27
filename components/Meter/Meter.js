@@ -14,7 +14,10 @@ const Meter = () => {
             if(pos>vh*0.32+30){
                 let meters = parseInt(((pos-vh*0.32-30) / 17));
                 setMeter(meters); 
-                if(pos>vh*0.35) setVisibility('visible');
+                if(meters > 10960){
+                    setVisibility('hidden');
+                }
+                if(pos>vh*0.35 && meters<10960) setVisibility('visible');
             }
             else setVisibility('hidden');
         }

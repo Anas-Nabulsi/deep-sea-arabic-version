@@ -12,7 +12,7 @@ const useCanvas = (callback) => {
     return canvasRef;
   }
 
-const Canvas = ({color, scrollModifier, scaler}) => {
+const Canvas = ({top, scrollModifier}) => {
     const [offsetY, setOffsetY] = useState(0);
 
         useEffect(()=>{
@@ -51,7 +51,7 @@ const Canvas = ({color, scrollModifier, scaler}) => {
             this.draw = () => {
                 c.beginPath();
                 c.arc(this.x,this.y,this.r,0,fullr,false);
-                c.fillStyle = color+op;
+                c.fillStyle = "#ffffff"+op;
                 c.closePath();
                 c.fill();
             }
@@ -90,7 +90,7 @@ const Canvas = ({color, scrollModifier, scaler}) => {
             return circles;
         }
         
-        let circles = createCircles(130);
+        let circles = createCircles(20);
         
         let circle = new Circle(100,100,0.5,0.5);
         circle.update();
@@ -106,7 +106,7 @@ const Canvas = ({color, scrollModifier, scaler}) => {
         animate();
       });
     return (
-        <canvas ref={canvas} style={{transform:`translateY(-${offsetY*scrollModifier}px)`, scale:scaler}} />
+        <canvas ref={canvas} style={{top:top, transform:`translateY(-${offsetY*scrollModifier}px)`}} />
     );
 }
 

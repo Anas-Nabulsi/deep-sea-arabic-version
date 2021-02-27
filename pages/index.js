@@ -1,7 +1,8 @@
+import Audio from "../components/Audio/Audio";
 import Canvas from "../components/Canvas/Canvas";
 import Meter from "../components/Meter/Meter";
 import Surface from "../components/Surface/Surface";
-import fish from '../lib/data'
+import fish from '../lib/data';
 
 export default function Home() {
   let vw = typeof window == 'object'? window.innerWidth : 1200;
@@ -9,9 +10,16 @@ export default function Home() {
   return (
     <div className="main">
       <Surface/>
+      <Audio/>
       <div className="canvas-container">
-        <Canvas scrollModifier={0.1} color="#ffffff" scaler={1}/>
-        <Canvas scrollModifier={0.4} color="#ffffff" scaler={1.2}/>
+        <Canvas top="80%" scrollModifier={0.1}/>
+        <Canvas top="120%" scrollModifier={0.2} />
+        <Canvas top="150%" scrollModifier={0.1} />
+        <Canvas top="200%" scrollModifier={0.5} />
+        <Canvas top="250%" scrollModifier={0.3} />
+        <Canvas top="300%" scrollModifier={0.4} />
+        <Canvas top="350%" scrollModifier={0.3} />
+        <Canvas top="400%" scrollModifier={0.1} />
       </div>
       <Meter/>
       <div className="grid">
@@ -77,6 +85,12 @@ export default function Home() {
             )
           })
         }
+      </div>
+      <div className="last-part">
+        <img src="/ocean-bottom-top.svg"/>
+        <div>
+          <h4>البحر العميق</h4>
+        </div>
       </div>
     </div>
   )

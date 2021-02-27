@@ -35,9 +35,8 @@ body {
 }
 
 .main{
-  background-image: linear-gradient(to top, #000, #111,#001a2493, #00222e93 86%,#00486393 93%, #006f8593 98.5%, #0093A493 99%, #00B4BF 99.5%),
-  linear-gradient(to top, #000, #111,#00121a, #00222e 86%,#002736 93%, #00596b 95.5%, #006d7993 99%, #00000000 100%),
-  linear-gradient(to top, #000, #111,#00121a, #00222e 80%,#002736 85%, #00596b 90.5%, #006d79 95%, #00747a00 100%);
+  background-color: #000000;
+  background-image: linear-gradient(to top, #000000 0%, #000000, #000000 85%, #000f11 93%, #00171a 94%, #001f22 95%, #00282c 96%, #003c42 98%, #0090a0 98.5%, #00a4b5 99%);
 }
 
 .intro{
@@ -95,56 +94,9 @@ body {
   right: 0;
   bottom: 0;
   top: 0;
-}
-.waveWrapperInner {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  bottom: -1px;
   background-image: linear-gradient(to top, #D4E7D0 20%, #9DE0FE 80%);
 }
-.bgTop {
-  z-index: 15;
-  opacity: 0.5;
-}
-.bgMiddle {
-  z-index: 10;
-  opacity: 0.75;
-}
-.bgBottom {
-  z-index: 5;
-}
-.wave {
-  position: absolute;
-  left: 0;
-  width: 500%;
-  height: 100%;
-  background-repeat: repeat no-repeat;
-  background-position: 0 bottom;
-  transform-origin: center bottom;
-}
-.waveTop {
-  background-size: 50% 120px;
-}
-.waveAnimation .waveTop {
-animation: move-wave 3s;
- -webkit-animation: move-wave 3s;
- -webkit-animation-delay: 1s;
- animation-delay: 1s;
-}
-.waveMiddle {
-  background-size: 50% 160px;
-}
-.waveAnimation .waveMiddle {
-  animation: move_wave 10s linear infinite;
-}
-.waveBottom {
-  background-size: 50% 120px;
-}
-.waveAnimation .waveBottom {
-  animation: move_wave 15s linear infinite;
-}
+
 
 .metermeasure{
   position: fixed;
@@ -239,6 +191,7 @@ animation: move-wave 3s;
 
 @media only screen and (max-width: 550px){
   .grid {
+    margin-top: 90vh;
       padding-left: 20px;
       padding-right: 20px;
   }
@@ -248,4 +201,75 @@ animation: move-wave 3s;
   .animal-name{
     font-size: 12px;
   }
+}
+
+
+::selection {
+  background-color: salmon;
+  color: white;
+}
+.parallax > use {
+  animation: move-forever 29s linear infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 3s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate(-90px, 0%);
+ }
+  100% {
+    transform: translate(85px, 0%);
+ }
+}
+
+.waves{
+  position: absolute;
+  width: 100%;
+  left:0;
+  bottom: 0;
+}
+.editorial {
+  display: block;
+  width: 100%;
+  height: 10em;
+  max-height: 100vh;
+  margin: 0;
+}
+
+@media (max-width: 50em) {
+  .content h1 {
+    font-size: 12vmax;
+ }
+  .editorial {
+    height: 17vw;
+ }
+}
+
+.last-part>img{
+  margin-bottom:-11px ;
+}
+
+.last-part > div{
+    background: linear-gradient(rgb(237, 229, 206), rgb(181, 173, 154));
+    height: 600px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-part h4{
+  font-size: 68px;
+  color: #2c2c54;
 }
