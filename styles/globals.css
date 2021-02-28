@@ -67,6 +67,7 @@ body * {
 
 .intro h3{
   font-weight:400;
+  direction: rtl !important;
 }
 
 .intro h3 span{
