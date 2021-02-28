@@ -7,7 +7,7 @@ const Surface = () => {
                 <h1>
                 البحر العميق
                 </h1>
-                <h3>اعداد الفريق 🌊</h3>
+                <h3>فريق سهولة انجاز <span>&#x2764;</span></h3>
             </div>
             <div className="waves">
                 <svg className="editorial"
