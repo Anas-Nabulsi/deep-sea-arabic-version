@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Audio from "../Audio/Audio";
 
 const Meter = () => {
     const [meter, setMeter] = useState(0);
@@ -23,9 +24,12 @@ const Meter = () => {
         }
     }
     return (
+        <>
         <div className="metermeasure" style={{visibility:visibility}}>
           <h3>عمق {meter} متر</h3>
         </div>
+        <Audio meters={meter}/>
+        </>
     )
 }
 

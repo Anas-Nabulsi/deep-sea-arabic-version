@@ -12,21 +12,7 @@ const useCanvas = (callback) => {
     return canvasRef;
   }
 
-const Canvas = ({top, scrollModifier}) => {
-    const [offsetY, setOffsetY] = useState(0);
-
-        useEffect(()=>{
-            window.addEventListener('scroll', handleScroll);
-            return ()=>{
-                window.removeEventListener('scroll', handleScroll);
-            }
-        },[])
-
-        const handleScroll = () => {
-            setOffsetY(window.pageYOffset);
-        }
-
-
+const Canvas = ({top, scrollModifier, offsetY}) => {
     const canvas = useCanvas(([canvas, c]) => {
         let vw = typeof window == 'object'? window.innerWidth : 1200;
         let vh = typeof window == 'object'? window.innerHeight : 800;
@@ -45,7 +31,7 @@ const Canvas = ({top, scrollModifier}) => {
             this.vx = vx;
             this.vy = vy;
             this.r = r;
-            this.rr = asr*0.01;
+            this.rr = asr*0.03;
         
             let op = Math.floor(Math.random()*40) + 50;
             this.draw = () => {
@@ -90,7 +76,7 @@ const Canvas = ({top, scrollModifier}) => {
             return circles;
         }
         
-        let circles = createCircles(20);
+        let circles = createCircles(25);
         
         let circle = new Circle(100,100,0.5,0.5);
         circle.update();
