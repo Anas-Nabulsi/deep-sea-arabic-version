@@ -247,6 +247,13 @@ body * {
   .note-title{
     font-size: 20px !important;
   }
+  .submarine{
+    grid-column-start: 1 !important;
+    grid-column-end: 8 !important;
+    max-width: 90% !important;
+    left:15% !important;
+    transform: translateX(0) !important;
+  }
 }
 
 
